@@ -1,0 +1,25 @@
+{
+  "name": "wallybot",
+  "version": "1.0.0",
+  "author": "Isaac J. Wallace",
+  "description": "A discord bot to help users with their every day commutes on discord",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@discord-player/extractor": "^4.5.1",
+    "@discordjs/builders": "^1.9.0",
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/rest": "^2.4.0",
+    "@discordjs/voice": "^0.17.0",
+    "discord-api-types": "^0.37.102",
+    "discord-player": "^6.7.1",
+    "discord-player-youtubei": "^1.3.3",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "ffmpeg-static": "^5.2.0",
+    "youtube-ext": "^1.1.25"
+  }
+}
