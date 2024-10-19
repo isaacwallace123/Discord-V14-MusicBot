@@ -16,8 +16,6 @@ const DBCollection = process.env.DATABASE_COLLECTION;
 
 const DBURI = `mongodb://${DBUser}:${DBPassword}@${DBHost}:${DBPort}/${DBCollection}`;
 
-console.log(DBURI)
-
 (async() => {
     try {
         await mongoose.connect(DBURI)
