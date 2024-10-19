@@ -1,9 +1,33 @@
 require('dotenv').config();
 
 const { Client, IntentsBitField, Collection } = require('discord.js');
+const mongoose = require('mongoose');
 
 const fs = require('fs');
 const path = require('path');
+
+// Connect to the database
+
+const DBUser = process.env.DATABASE_USER;
+const DBPassword = process.env.DATABASE_PASSWORD;
+const DBHost = process.env.DATABASE_HOST;
+const DBPort = process.env.DATABASE_PORT;
+const DBCollection = process.env.DATABASE_COLLECTION;
+
+const DBURI = `mongodb://${DBUser}:${DBPassword}@${DBHost}:${DBPort}/${DBCollection}`;
+
+(async() => {
+    try {
+        await mongoose.connect(DBURI)
+        .then(() => {
+            console.log('Connected to database');
+        }).catch(err => {
+            console.error('Connection error:',err);
+        })
+    } catch(err) {
+        console.log(err);
+    }
+})();
 
 // Create the discord client
 
