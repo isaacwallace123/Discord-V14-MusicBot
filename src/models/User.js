@@ -11,7 +11,12 @@ const userSchema = new Schema({
         type: Map,
         of: new Schema({
             balance: {
-                type: Number
+                type: Number,
+                default: 0,
+            },
+            level: {
+                type: Number,
+                default: 1,
             }
         }),
     },
