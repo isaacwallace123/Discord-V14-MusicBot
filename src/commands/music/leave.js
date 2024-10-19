@@ -9,24 +9,17 @@ module.exports = {
     
     execute: async ({ client, interaction }) => {
         const queue = useQueue(interaction.guildId);
-
-        if (!queue) {
-            const embed = new EmbedBuilder()
-                .setColor(0xFF6161)
-                .setTitle("Not playing")
-                .setDescription(`I am currently not playing any tracks`);
-
-            return interaction.reply({ embeds: [embed], ephemeral: true });
-        }
-
+        
         await interaction.deferReply();
-
-        queue.delete();
 
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
             .setTitle("Disconnected!")
             .setDescription(`Goodbye and have fun!`)
+
+        if (!queue) return interaction.reply({ embeds: [embed], ephemeral: true });
+
+        queue.delete();
 
         return interaction.editReply({ embeds: [embed] });
     },
