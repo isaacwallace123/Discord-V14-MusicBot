@@ -28,7 +28,22 @@ module.exports = {
                 .setThumbnail(track.thumbnail)
                 .setFooter({ text: `Duration: ${track.duration}`});
             
-            queue.metadata.channel.send({ embeds: [embed] })
+            queue.metadata.channel.send({ embeds: [embed] });
         });
+
+        player.events.on(GuildQueueEvent.playerError, (queue, error) => {
+            console.log(error);
+
+            const embed = new EmbedBuilder()
+                .setColor(0xFF6161)
+                .setAuthor({ name: queue.metadata.user.username, iconURL: queue.metadata.user.displayAvatarURL() })
+                .setTitle("Error playing that track")
+                .setDescription(`The following track had an error while transcoding.\n**[${track.title} - ${track.author}](${track.url})**`)
+                .setThumbnail(track.thumbnail)
+            
+            queue.metadata.channel.send({ embeds: [embed] });
+        });
+
+        player.events.on('debug', (queue, message) => console.log(`[DEBUG ${queue.guild.id}] ${message}`));
 	},
 };

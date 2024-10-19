@@ -43,7 +43,7 @@ module.exports = {
                 { band: 3, gain: 0.15 },
                 { band: 4, gain: 0.1 },
                 { band: 5, gain: -0.1 },
-              ]);
+            ]);
         } else {
             queue.filters.equalizer.setEQ(queue.filters.equalizerPresets.Flat);
         }
