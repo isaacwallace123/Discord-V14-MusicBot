@@ -29,6 +29,8 @@ const DBURI = `mongodb://${DBUser}:${DBPassword}@${DBHost}:${DBPort}/${DBCollect
     }
 })();
 
+console.log("Testing")
+
 // Create the discord client
 
 const client = new Client({
