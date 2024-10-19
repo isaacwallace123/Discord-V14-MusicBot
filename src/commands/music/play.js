@@ -25,14 +25,13 @@ module.exports = {
             requestedBy: interaction.user,
         });
 
-        if (!result.hasTracks()) {
-            const embed = new EmbedBuilder()
-                .setColor(0xFF6161)
-                .setTitle("No results found")
-                .setDescription(`No results found for \`${query}\``);
-            
-                return interaction.editReply({ embeds: [embed], ephemeral: true });
+        const ErrorEmbed = new EmbedBuilder()
+            .setColor(0xFF6161)
+            .setTitle("No results found")
+            .setDescription(`No results found for \`${query}\``);
 
+        if (!result.hasTracks()) {
+            return interaction.editReply({ embeds: [ErrorEmbed], ephemeral: true });
         }
 
         const { track, searchResult } = await player.play(channel, result, {
@@ -52,7 +51,10 @@ module.exports = {
             connectionOptions: {
                 deaf: true,
             }
-        })
+        }).catch((Err) => {
+            console.log(Err);
+            return interaction.editReply({ embeds: [ErrorEmbed] });
+        });
 
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
