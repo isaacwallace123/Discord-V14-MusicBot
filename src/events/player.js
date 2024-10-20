@@ -28,7 +28,7 @@ module.exports = {
                 .setThumbnail(track.thumbnail)
                 .setFooter({ text: `Duration: ${track.duration}`});
             
-            queue.metadata.channel.send({ embeds: [embed] });
+            return queue.metadata.channel.send({ embeds: [embed] });
         });
 
         player.events.on(GuildQueueEvent.playerError, (queue, error) => {
@@ -41,7 +41,7 @@ module.exports = {
                 .setDescription(`The following track had an error while transcoding.\n**[${track.title} - ${track.author}](${track.url})**`)
                 .setThumbnail(track.thumbnail)
             
-            queue.metadata.channel.send({ embeds: [embed] });
+            return queue.metadata.channel.send({ embeds: [embed] });
         });
 
         player.events.on('debug', (queue, message) => console.log(`[DEBUG ${queue.guild.id}] ${message}`));
