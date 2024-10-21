@@ -84,3 +84,7 @@ for (const file of getFilesRecursively(path.join(__dirname, 'events'))) {
 // Start Client
 
 client.login(process.env.TOKEN);
+
+process.on('SIGTERM', () => {
+    process.exit(0);
+});
