@@ -1,6 +1,6 @@
 # Discord Music Player
 
-This discord music player, programmed entirely by Isaac J. Wallace, is a discord bot & application that is able to properly handle FFMPEG and youtube extraction integration to allow users to listen to music while in a discord call.
+This discord music player, programmed entirely using JavaScript, is a discord bot & application that is able to properly handle FFMPEG and youtube extraction integration to allow users to listen to music while in a discord call.
 
 ## Installation
 
