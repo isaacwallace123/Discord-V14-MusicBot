@@ -17,7 +17,7 @@ module.exports = {
             .setTitle("Disconnected!")
             .setDescription(`Goodbye and have fun!`)
 
-        if (!queue) return interaction.reply({ embeds: [embed], ephemeral: true });
+        if (!queue) return interaction.editReply({ embeds: [embed], ephemeral: true });
 
         queue.delete();
 

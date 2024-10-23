@@ -22,7 +22,7 @@ module.exports = {
         player.events.on(GuildQueueEvent.playerStart, (queue, track) => {
             const embed = new EmbedBuilder()
                 .setColor(0x0099FF)
-                .setAuthor({ name: queue.metadata.user.username, iconURL: queue.metadata.user.displayAvatarURL() })
+                .setAuthor({ name: track.requestedBy.username, iconURL: track.requestedBy.displayAvatarURL() })
                 .setTitle("Playing Track")
                 .setDescription(`**[${track.title} - ${track.author}](${track.url})**`)
                 .setThumbnail(track.thumbnail)
@@ -44,6 +44,6 @@ module.exports = {
             return queue.metadata.channel.send({ embeds: [embed] });
         });
 
-        player.events.on('debug', (queue, message) => console.log(`[DEBUG ${queue.guild.id}] ${message}`));
+        //player.events.on('debug', (queue, message) => console.log(`[DEBUG ${queue.guild.id}] ${message}`));
 	},
 };

@@ -25,7 +25,6 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setColor(0x0099FF)
-//            .setAuthor({ name: interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
             .setTitle('Track skipped!')
             .setDescription('I have successfully skipped to the previous track.')
 

@@ -1,5 +1,5 @@
 {
-  "name": "wallybot",
+  "name": "musicbot",
   "version": "1.0.0",
   "author": "Isaac J. Wallace",
   "description": "A discord bot to help users with their every day commutes on discord",
@@ -20,7 +20,6 @@
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5",
     "ffmpeg-static": "^5.2.0",
-    "mongoose": "^8.7.2",
     "youtube-ext": "^1.1.25"
   }
 }
