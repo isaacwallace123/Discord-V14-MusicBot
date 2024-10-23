@@ -7,7 +7,7 @@ This discord music player, programmed entirely by Isaac J. Wallace, is a discord
 Download and use [node](https://nodejs.org/en) to install [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).
 
 ```bash
-node install --global yarn
+npm install --global yarn
 ```
 
 You will then need to install [FFMPEG](https://www.ffmpeg.org/download.html) to your local machine as well as all yarn dependencies as follows:
